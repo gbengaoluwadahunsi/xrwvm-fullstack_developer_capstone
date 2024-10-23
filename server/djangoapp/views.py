@@ -86,3 +86,24 @@ def registration(request):
         return JsonResponse({"userName": username, "status": "Authenticated"})
     else:
         return JsonResponse({"userName": username, "error": "Already Registered"})
+
+
+@csrf_exempt
+def get_dealerships(request):
+    if request.method == "GET":
+        # Get the state from the query parameters
+        state = request.GET.get('state', None)
+
+        # Sample data, replace this with your actual database call
+        dealerships = [
+            {"id": 1, "full_name": "Dealer 1", "city": "City 1", "address": "Address 1", "zip": "12345", "state": "State 1"},
+            {"id": 2, "full_name": "Dealer 2", "city": "City 2", "address": "Address 2", "zip": "67890", "state": "State 2"},
+            # Add more dealers as needed
+        ]
+
+        # Filter dealers based on the state, if provided
+        if state and state != "All":
+            dealerships = [dealer for dealer in dealerships if dealer['state'] == state]
+
+        return JsonResponse({"status": 200, "dealers": dealerships})
+    return JsonResponse({"status": 400, "message": "Bad Request"})
