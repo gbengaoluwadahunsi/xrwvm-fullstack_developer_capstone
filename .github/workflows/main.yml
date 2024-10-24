@@ -4,7 +4,7 @@ on:
     branches: [master, main]
   pull_request:
     branches: [master, main]
-jobs:
+# jobs:
   # lint_python:
   #   name: Lint Python Files
   #   runs-on: ubuntu-latest
