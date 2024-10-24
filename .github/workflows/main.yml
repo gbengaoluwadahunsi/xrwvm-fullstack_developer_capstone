@@ -49,6 +49,6 @@ jobs:
 
       - name: Run Linter
         run: |
-          # Find all JavaScript files recursively and run JSHint with ES6 support
-          find ./server/database -name "*.js" -exec jshint --esversion 6 {} +
+          # Find all JavaScript files recursively and run JSHint
+          find ./server/database -name "*.js" -exec jshint {} +
           echo "Linted all the JavaScript files successfully"
