@@ -1,9 +1,17 @@
+
 name: 'Lint Code'
 on:
   push:
     branches: [master, main]
   pull_request:
     branches: [master, main]
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No Operations
+        run: echo "No linting jobs are currently defined."
+
 # jobs:
   # lint_python:
   #   name: Lint Python Files
