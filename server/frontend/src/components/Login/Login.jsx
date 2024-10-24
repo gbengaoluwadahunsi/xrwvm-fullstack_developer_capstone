@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import "./Login.css";
 import Header from '../Header/Header';
+import PropTypes from 'prop-types';
 
 const Login = ({ onClose }) => {
 
@@ -71,4 +72,9 @@ const Login = ({ onClose }) => {
   );
 };
 
+
 export default Login;
+
+Login.propTypes = {
+  onClose: PropTypes.func.isRequired
+};
